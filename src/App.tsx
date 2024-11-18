@@ -36,7 +36,6 @@ const App: React.FC = () => {
       const loadQuestions = async () => {
         try {
           const response = await fetchQuestionsData(openAiClient);
-          console.log(response)
           setQuizQuestions(() => response);
         } catch (err) {
           setError("Failed to load quiz questions. Please try again later.");
@@ -50,7 +49,7 @@ const App: React.FC = () => {
   return (
     <div
       className="App flex flex-col items-center justify-center h-[100vh] overflow-hidden"
-      data-theme="light"
+      data-theme="business"
     >
       {screen === "start" && <StartScreen onStart={startQuiz} />}
       {screen === "quiz" && (
